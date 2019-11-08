@@ -1,0 +1,184 @@
+body, html {
+  background-color: #FFFFFF;
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-family: "TW Cen MT";
+}
+
+ul{
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+footer{
+  background-color: #F7EAB3;
+  border-radius: 25px;
+  margin: 30px;
+  text-align: center;
+  line-height: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 10px;
+}
+
+a:visited{
+  color:black;
+}
+
+footer a:link{
+  color: #AAAAAA;
+}
+
+/* banner image */
+.banner-image {
+  background-image: url("header.png");
+  height: 30%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Site nav bar */
+.nav{
+  list-style:none;
+  margin-top: 24px;
+  padding: 0;
+  text-align:center;
+  text-transform: uppercase;
+}
+
+.nav li{
+  display: inline-block;
+  padding: 10px;
+  width: 170px;
+  background-color: #F7EAB3;
+  border-radius: 25px;
+  margin-bottom: 10px;
+}
+
+.nav li.active{
+  background-color: #FFDE5F;
+}
+
+.nav li a.active{
+  color: black;
+}
+
+.nav a:link{
+  text-decoration: none;
+  color: #807e7e;
+}
+
+.nav a:visited{
+  text-decoration: none;
+  color: #807e7e;
+}
+
+/* Photo Grid */
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 100px;
+  justify-content: center;
+}
+
+/* 3 equal columns */
+.column{
+  flex: 0 0 400px;
+  max-width: 33.3%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 0;
+  vertical-align: middle;
+
+  /* img */
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.image{
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.text {
+  background-color: rgba(0,0,0,0.8);
+  color: #fff;
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image:hover .text {
+  opacity: 1;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 1440px){
+  .row{
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .row{
+    justify-content: flex-start;
+  }
+
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .row{
+    padding: 0 5px;
+  }
+
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Social Media Links */
+.social{
+  list-style: none;
+  margin: 0;
+}
+
+.social li{
+  display: inline;
+  padding: 10px;
+}
+
+.social li:hover{
+  opacity: 0.5;
+  transition: opacity .5s ease-out;
+}
