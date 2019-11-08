@@ -40,7 +40,7 @@ footer a:link{
 .banner-image {
   background-image: url("header.png");
   height: 30%;
-
+  min-height: 50px;
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
   background-repeat: no-repeat;
@@ -94,13 +94,12 @@ footer a:link{
 .row{
   display: flex;
   flex-wrap: wrap;
-  padding: 0 100px;
   justify-content: center;
 }
 
 /* 3 equal columns */
 .column{
-  flex: 0 0 400px;
+  flex: 0 0 600px;
   max-width: 33.3%;
   padding: 0 4px;
 }
@@ -113,6 +112,8 @@ footer a:link{
   display: block;
   width: 100%;
   height: auto;
+
+  border: 2px solid #FFDE5F;
 }
 
 .image{
@@ -122,8 +123,8 @@ footer a:link{
 }
 
 .text {
-  background-color: rgba(0,0,0,0.8);
-  color: #fff;
+  background-color: rgba(0,139,139,0.8);
+  color: white;
   transition: .5s ease;
   opacity: 0;
   position: absolute;
