@@ -1,49 +1,55 @@
 body, html {
   background-color: #FFFFFF;
-  list-style-type: none;
+  font-family: "TW Cen MT";
   margin: 0;
   padding: 0;
-  font-family: "TW Cen MT";
+
+  height: 100%;
+
+  list-style-type: none;
 }
 
-ul{
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-}
-
+/* Global */
 * {
   box-sizing: border-box;
-}
-
-footer{
-  background-color: #F7EAB3;
-  border-radius: 25px;
-  margin: 30px;
-  text-align: center;
-  line-height: 20px;
-  margin-left: 10%;
-  margin-right: 10%;
-  padding: 10px;
 }
 
 a:visited{
   color:black;
 }
 
+/* Sticky Nav Bar */
+ul{
+  position: sticky;
+  position: -webkit-sticky;
+  top: 10px;
+}
+
+footer{
+  background-color: #F7EAB3;
+  border-radius: 25px;
+
+  margin: 30px;
+  margin-left: 10%;
+  margin-right: 10%;
+
+  padding: 10px;
+  text-align: center;
+}
 footer a:link{
   color: #AAAAAA;
 }
 
-/* banner image */
+/* Top Banner image */
 .banner-image {
   background-image: url("header.png");
-  height: 300px;
-  /* Position and center the image to scale nicely on all screens */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 30%;
+  min-height: 100px;
+
   position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* Site nav bar */
@@ -144,7 +150,7 @@ footer a:link{
   opacity: 1;
 }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
+/* Responsive layout */
 @media (max-width: 1440px){
   .row{
     padding: 0 10px;
@@ -152,6 +158,10 @@ footer a:link{
 }
 
 @media (max-width: 1200px) {
+  .banner-image{
+    max-height: 170px;
+  }
+
   .row{
     justify-content: flex-start;
   }
@@ -164,6 +174,14 @@ footer a:link{
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media (max-width: 600px) {
+  html, body{
+    font-size: 20px;
+  }
+
+  .banner-image{
+    max-height: 120px;
+  }
+
   .row{
     padding: 0 5px;
   }
