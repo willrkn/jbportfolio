@@ -25,19 +25,38 @@ ul{
   top: 10px;
 }
 
+h1{
+  font-size: 60px;
+  margin-top: 0;
+  text-align: right;
+
+  border-right: 4px solid black;
+  height: 1em;
+  padding-right: 10px;
+}
+
 footer{
   background-color: #F7EAB3;
   border-radius: 25px;
 
   margin: 30px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 20%;
+  margin-right: 20%;
 
   padding: 10px;
   text-align: center;
 }
 footer a:link{
   color: #AAAAAA;
+}
+
+main img{
+  width: 1000px;
+  height: auto;
+
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 /* Top Banner image */
@@ -172,6 +191,41 @@ footer a:link{
   }
 }
 
+/* Entry Form */
+.form{
+  margin-left: 30%;
+  margin-right: 30%;
+
+  border-radius: 20px;
+  background-color: #F7EAB3;
+  padding: 20px;
+}
+
+/* Submit button */
+input[type=submit] {
+  background-color: #FFDE5F;
+  padding: 10px 20px;
+
+  border: solid;
+  border-width: 2px;
+  border-color: white;
+  border-radius: 20px;
+
+  cursor: pointer;
+}
+
+/* text input */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 0px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media (max-width: 600px) {
   html, body{
@@ -190,6 +244,26 @@ footer a:link{
     flex: 100%;
     max-width: 100%;
   }
+}
+
+/* about summary*/
+.summary{
+  margin-left: 30%;
+  margin-right: 30%;
+  background-color: #F7EAB3;
+  border-radius: 20px;
+  padding: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.summary img{
+  width: 70%;
+  height: auto;
+
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 /* Social Media Links */
