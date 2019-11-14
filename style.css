@@ -333,7 +333,7 @@ input[type=text], select, textarea {
 
 /* testing to see if size changes properly on mobile */
   .nav a{
-    font-size: 4px;
+    font-size: 12px;
     vertical-align: middle;
   }
 
