@@ -68,7 +68,7 @@ footer a:link{
 
 /* TODO: Change this to own class for CV */
 main img{
-  width: 1000px;
+  width: 95%;
   height: auto;
 
   margin-left: auto;
@@ -211,30 +211,6 @@ main img{
   }
 }
 
-@media (max-width: 600px) {
-  html, body{
-    font-size: 20px;
-  }
-
-  .banner-image{
-    max-height: 120px;
-    margin-bottom: 5px;
-  }
-
-  .nav{
-    font-size: 16px;
-  }
-
-  .row{
-    padding: 0 5px;
-  }
-
-  .column {
-    flex: 100%;
-    max-width: 100%;
-  }
-}
-
 /* Entry Form */
 .form{
   margin-left: 30%;
@@ -321,4 +297,64 @@ input[type=text], select, textarea {
 .social li:hover{
   opacity: 0.5;
   transition: opacity .5s ease-out;
+}
+
+
+@media (max-width: 600px) {
+  html, body{
+    font-size: 20px;
+  }
+
+  .title{
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  h1{
+    font-size: 40px;
+    border-right: 2px solid black;
+  }
+
+  .banner-image{
+    max-height: 120px;
+    margin-bottom: 5px;
+  }
+
+  .nav{
+    font-size: 16px;
+  }
+
+  .row{
+    padding: 0 5px;
+  }
+
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+
+  .summary{
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .form{
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  h2{
+    font-size: 30px;
+  }
+
+  p{
+    font-size: 16px;
+  }
+
+  footer{
+    margin-left: 5%;
+    margin-right: 5%;
+
+    font-size: 16px;
+  }
 }
