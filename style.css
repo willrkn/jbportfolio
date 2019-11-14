@@ -81,6 +81,7 @@ main img{
   background-image: url("header.png");
   height: 30%;
   min-height: 100px;
+  margin-bottom: 24px;
 
   position: relative;
   background-position: center;
@@ -92,7 +93,6 @@ main img{
 /* TODO: Add hover effects */
 .nav{
   list-style:none;
-  margin-top: 24px;
   padding: 0;
   text-align:center;
   text-transform: uppercase;
@@ -115,6 +115,7 @@ main img{
 .nav a{
   display: inline-block;
   width: 150px;
+  vertical-align: top;
 }
 
 .nav li a.active{
@@ -217,13 +218,17 @@ main img{
 
   .banner-image{
     max-height: 120px;
+    margin-bottom: 5px;
+  }
+
+  .nav{
+    font-size: 16px;
   }
 
   .row{
     padding: 0 5px;
   }
 
-  /* makes the two columns stack on top of each other instead of next to each other */
   .column {
     flex: 100%;
     max-width: 100%;
