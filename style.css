@@ -31,7 +31,7 @@ h1{
   text-align: right;
 
   border-right: 4px solid black;
-  height: 1em;
+  height: 100%;
   padding-right: 10px;
 }
 
@@ -253,17 +253,20 @@ input[type=text], select, textarea {
   background-color: #F7EAB3;
   border-radius: 20px;
   padding: 20px;
-  padding-left: 50px;
-  padding-right: 50px;
+  overflow: hidden;
 }
 
 .summary img{
-  width: 70%;
+  width: 50%;
   height: auto;
 
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+  float: left;
+
+  border-radius: 20px;
+}
+
+.summary p{
+  padding-left: 52%;
 }
 
 /* Social Media Links */
