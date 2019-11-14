@@ -68,7 +68,7 @@ footer a:link{
 
 /* TODO: Change this to own class for CV */
 main img{
-  width: 95%;
+  width: 1000px;
   height: auto;
 
   margin-left: auto;
@@ -208,6 +208,10 @@ main img{
   .column {
     flex: 50%;
     max-width: 50%;
+  }
+
+  main img{
+    width: 95%;
   }
 }
 
