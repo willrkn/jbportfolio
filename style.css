@@ -331,8 +331,9 @@ input[type=text], select, textarea {
     padding: 2px;
   }
 
+/* testing to see if size changes properly on mobile */
   .nav a{
-    font-size: 14px;
+    font-size: 4px;
     vertical-align: middle;
   }
 
