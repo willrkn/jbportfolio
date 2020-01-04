@@ -4,6 +4,9 @@ This project is an art portfolio website for a client of mine, using HTML, CSS, 
 
 ## Known Issues
 
-Some Padding issues on mobile.
-Images need to be downsized to load faster.
-Animations need to be changed to JS to improve smoothness.
+Animation Page is not properly formatted
+
+## TODO
+
+Contact Form Functionality
+Client portal to update website
