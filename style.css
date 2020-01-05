@@ -9,8 +9,6 @@ body, html {
   margin: 0;
   padding: 0;
 
-  height: 100%;
-
   list-style-type: none;
 }
 
@@ -26,27 +24,7 @@ ul{
   top: 10px;
 }
 
-/* title wrapper for h1 */
-.title{
-  margin-bottom: 30px;
-}
 
-.title p{
-  padding-left: 40px;
-}
-
-.title img{
-  margin: 10px;
-  margin-left: 20px;
-  margin-right: -10px;
-
-  width: 120px;
-  height: inherit;
-
-  float: right;
-
-  border-radius: 60px;
-}
 
 /* standard tag overrides */
 h1{
@@ -95,10 +73,24 @@ main img{
   display: block;
 }
 
+/* title wrapper for h1 */
+.title{
+  margin-bottom: 30px;
+}
+
+.title p{
+  padding-left: 40px;
+}
+
+.title img{
+  max-height: 100px;
+  width: auto;
+}
+
 /* Top Banner image */
 .banner-image {
   background-image: url("header.png");
-  height: 30%;
+  height: 30vh;
   min-height: 100px;
   margin-bottom: 24px;
 
@@ -179,8 +171,6 @@ main img{
   width: 100%;
   height: 300px;
 
-  border: 2px solid rgb(154,205,50);
-
   object-fit: cover;
 }
 
@@ -188,6 +178,15 @@ main img{
   display: inline-block;
   position: relative;
   width: 100%;
+  overflow: hidden;
+}
+
+.image img {
+  transition: transform .3s ease;
+}
+
+.image:hover img{
+  transform: scale(1.1);
 }
 
 /* Title Overlay of Image */
@@ -203,7 +202,7 @@ main img{
 
 /* Captions activated by hovering over image */
 .text {
-  background-color: rgba(0,139,139,0.8);
+  background-color: rgba(0,139,139,0.8);;
   color: white;
   transition: .5s ease;
   opacity: 0;
@@ -217,7 +216,7 @@ main img{
 }
 
 .image:hover .text {
-  opacity: 1;
+  opacity: 0.9;
 }
 
 /* Entry Form */

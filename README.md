@@ -9,4 +9,4 @@ Animation Page is not properly formatted
 ## TODO
 
 Contact Form Functionality
-Client portal to update website
+Add content management system for client
