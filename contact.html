@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+  include "emailcontact.php";
+?>
 
 <head>
   <title>Contact | Jess Bolam Art</title>
@@ -25,17 +28,20 @@
     </div>
 <!-- Contact Form -->
     <div class = "form">
-      <form action="action_page.php">
-        <label for="fname">Your first name:</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name.." />
+      <form name="contactform" method="post" action="emailcontact.php">
+        <label for="name">Your name: *</label>
+        <input type="text" name="name" placeholder="Your name.." />
 
-        <label for="fname">Your last name:</label>
-        <input type="text" id="fname" name="lastname" placeholder="Your surname.." />
+        <label for="email">Your email: *</label>
+        <input type="text"  name="email" placeholder="Your email address.." />
 
-        <label for="subject">Subject</label>
-        <textarea id="subject" name="subject" placeholder="What you would like me to do...." style="height:200px"></textarea>
+        <label for="phone">Your phone number:</label>
+        <input type="text" name="phone" placeholder="Your phone number (optional).." />
 
-        <input type="submit" value="Submit">
+        <label for="query">Your email query:</label>
+        <textarea name="subject" placeholder="What your query or request is..." style="height:200px"></textarea>
+
+        <button type="submit" name="submit">SEND FORM</button>
       </form>
     </div>
   </main>
