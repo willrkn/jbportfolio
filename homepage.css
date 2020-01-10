@@ -117,7 +117,7 @@ main{
   padding: 10px;
   width: 170px;
   background-color: #F7EAB3;
-  
+
   border-radius: 25px;
 
   margin-bottom: 10px;
@@ -215,6 +215,10 @@ main{
   position: relative;
   width: 100%;
   overflow: hidden;
+}
+
+.image-upload{
+  text-align: center;
 }
 
 
