@@ -26,10 +26,10 @@
     <div class = "form">
       <!-- Login -->
       <form method="post" action="includes/login.php">
-        <label for="mailuid">Your name: *</label>
-        <input type="text" name="mailuid" placeholder="Username/Email.." />
-        <label for="pwd">Your password: *</label>
-        <input type="password" name="pwd" placeholder="Password.." />
+        <label for="username">Your name: *</label>
+        <input type="text" name="username" placeholder="Username/Email.." />
+        <label for="password">Your password: *</label>
+        <input type="password" name="password" placeholder="Password.." />
         <button type="submit" name="login-submit">LOGIN</button>
       </form>
       <a href="signup.php">Add a new user</a>

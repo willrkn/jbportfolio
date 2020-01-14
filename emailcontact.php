@@ -6,7 +6,8 @@ if(isset($_POST['submit'])){
   $phone = $_POST['phone'];
   $query = $_POST['query'];
 
-  $emailTo = "d10811147@urhen.com";
+// need to change - personal email for testing purposes
+  $emailTo = "webdevtestemail1337@gmail.com";
   $headers = "From: ".$emailFrom;
   $txt = "You have received an email from ".$name.".\n\n".$query;
 

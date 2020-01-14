@@ -1,6 +1,6 @@
 <?php
-// Temp
-  $_SESSION['username'] = "Admin";
+// start login session
+  session_start();
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +25,11 @@
           <li><a href="cv.html">CV</a></li>
         </ul>
   <main>
+    <?php
+      if(isset($_SESSION['username'])){
+        echo '<p>If you see this message, you are successfully logged in as a site contributor.</p>';
+      }
+    ?>
     <!-- New HomePage Design -->
     <div class="row">
       <div class="column">
@@ -77,7 +82,7 @@
             </h2>
 
             <?php
-
+            // check if logged in
             if(isset($_SESSION['username'])){
               echo '<div class="image-upload">
                 <form action="includes/gallery-upload.php" method="post" enctype="multipart/form-data">
@@ -110,7 +115,7 @@
       <li><a href="https://www.pinterest.co.uk/jessbolam/"><img border="0" alt="Pinterest" src="icons/pinterest.png" width="30" height="30"></a></li>
       <li><a href="https://www.linkedin.com/in/jessica-bolam/"><img border="0" alt="LinkedIn" src="icons/linkedin.png" width="30" height="30"></a></li>
     </ul>
-    <a href="mailto:jess.bolam@hotmail.co.uk" target="_top">jess.bolam@hotmail.co.uk</a>  |  animation artist and illustrator  |  Buckinghamshire, UK
+    <a href="mailto:jess.bolam@hotmail.co.uk" target="_top">jess.bolam@hotmail.co.uk</a>  |  <a href="login.php">animation artist and illustrator</a>  |  Buckinghamshire, UK
     <div>
       Website made by <a href="http://github.com/willrkn">willrkn</a>
     </div>

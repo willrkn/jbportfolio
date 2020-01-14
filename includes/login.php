@@ -1,35 +1,38 @@
 <?php
 
+// Check this page was acceessed through button
 if(isset($_POST['login-submit'])){
-  require 'logindb.php';
-  
-  $mailuid = $_POST['mailuid'];
-  $password = $_POST['pwd'];
+  require 'dbh.php';
 
-  if(empty($mailuid) || empty(password)){
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+
+  if(empty($username) || empty($password)){
     header("Location: ../index.php?error=emptyfields");
     exit();
   } else{
-    $sql = "SELECT * FROM users WHERE id=? OR email =?;";
+    $sql = "SELECT * FROM users WHERE username=? OR email =?;";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
       header("Location: ../index.php?error=sqlerror");
       exit();
     } else{
-      mysqli_stmt_bind_param($stmt, "ss", $mailuid, $password);
+      mysqli_stmt_bind_param($stmt, "ss", $username, $username);
       mysqli_stmt_execute($stmt);
       $result = mysqli_stmt_get_result($stmt);
-      if($row = mysqli_fetch_assoc()){
-        $pwdCheck = password_verify($password, $row['pwdUsers']);
-        if($pwdCheck == false){
+      if($row = mysqli_fetch_assoc($result)){
+        $passCheck = password_verify($password, $row['password']);
+        if($passCheck == false){
           header("Location: ../index.php?error=wrongpwd");
           exit();
-        } else if($pwdCheck == true){
-          // successful login!
-
+        } else if($passCheck == true){
+          // successful login! @@@@@@@@@
           session_start();
-          $_SESSION['UserId'] = $row['idUsers'];
-          $_SESSION['UserUid'] = $row['uidUsers'];
+          $_SESSION['userID'] = $row['userID'];
+          $_SESSION['username'] = $row['username'];
+
+          header("Location: ../index.php?login=success");
+          exit();
         } else{
           header("Location: ../index.php?error=wrongpwd");
           exit();
