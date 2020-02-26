@@ -8,17 +8,22 @@
 </head>
 
 <body>
+  <?php
+    if(isset($_SESSION['username'])){
+      echo '<p>If you see this message, you are successfully logged in as a site contributor.</p>';
+    }
+  ?>
 <!-- Banner Image: not header as needs to be size of window-->
   <div class="banner-image"></div>
   <!-- Nav Bar -->
-      <ul class="nav">
-        <li><a href="index.php" class="active">Home</a></li>
-        <li><a href="art.html">Art & Illustration</a></li>
-        <li><a href="animation.html">Animation Design</a></li>
-        <li class="active"><a href="contact.html">Contact</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="cv.html">CV</a></li>
-      </ul>
+  <ul class="nav">
+    <li class="active"><a href="index.php" class="active">Home</a></li>
+    <li><a href="art.php">Art & Illustration</a></li>
+    <li><a href="animation.php">Animation Design</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="cv.html">CV</a></li>
+  </ul>
   <main>
     <h1>Create Contributor</h1>
 <!-- Contact Form -->

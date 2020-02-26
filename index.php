@@ -13,35 +13,61 @@
 </head>
 
 <body>
-<!-- Banner Image: not header as needs to be size of window-->
-  <div class="banner-image"></div>
-  <!-- Nav Bar -->
-        <ul class="nav">
-          <li class="active"><a href="index.php" class="active">Home</a></li>
-          <li><a href="art.html">Art & Illustration</a></li>
-          <li><a href="animation.html">Animation Design</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="cv.html">CV</a></li>
-        </ul>
-  <main>
     <?php
       if(isset($_SESSION['username'])){
         echo '<p>If you see this message, you are successfully logged in as a site contributor.</p>';
       }
     ?>
+<!-- Banner Image: not header as needs to be size of window-->
+  <div class="banner-image"></div>
+  <!-- Nav Bar -->
+  <ul class="nav">
+    <li class="active"><a href="index.php" class="active">Home</a></li>
+    <li><a href="art.php">Art & Illustration</a></li>
+    <li><a href="animation.php">Animation Design</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="cv.html">CV</a></li>
+  </ul>
+  <main>
     <!-- New HomePage Design -->
     <div class="row">
       <div class="column">
         <div class="showcase">
           <img src="images\titles\latest-project.png" alt="Latest Project"/>
-          <img src="homepage-gallery/beehive.png" alt="beehive background"/>
-            <div class="text">
-              Beehive beehive beehive. I like bees.
-          </div>
-          <p>
-            Sample text talking about the project Sample text talking about the project Sample text talking about the project Sample text talking about the project Sample text talking about the project Sample text talking about the project Sample text talking about the project
-          </p>
+          <?php
+          include_once 'includes/dbh.php';
+          $sql = "SELECT * FROM projects ORDER BY imageOrder DESC LIMIT 1;";
+          $stmt = mysqli_stmt_init($conn);
+          if(!mysqli_stmt_prepare($stmt, $sql)){
+            echo "SQL statement failed";
+          } else{
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+            // loop
+            while($row = mysqli_fetch_assoc($result)){
+              echo '
+                <img src="images/media/'.$row["fileName"].'" />
+                <h2>'.$row['title'].'</h2>
+                <p>'.$row["description"].'</p>
+                ';
+            }
+          }
+          ?>
+          <?php
+          // check if logged in
+          if(isset($_SESSION['username'])){
+            echo '<div class="projects-upload">
+              <form action="includes/latest-project-upload.php" method="post" enctype="multipart/form-data">
+                <input type="text" name="filename" placeholder="file name.."/>
+                <input type="text" name="filetitle" placeholder="image title.."/>
+                <input type="text" name="filedesc" placeholder="image caption.."/>
+                <input type="file" name="file"/>
+                <button type="submit" name="submit">UPLOAD</button>
+              </form>
+            </div>';
+          }
+          ?>
         </div>
       </div>
       <div class="column" style="background-color: #F7EAB3;
@@ -57,7 +83,7 @@
             <h2>Commissions</h2>
               <?php
               include_once 'includes/dbh.php';
-              $sql = "SELECT * FROM gallery ORDER BY imageOrder DESC;";
+              $sql = "SELECT * FROM homepage_commissions ORDER BY imageOrder DESC LIMIT 3;";
               $stmt = mysqli_stmt_init($conn);
               if(!mysqli_stmt_prepare($stmt, $sql)){
                 echo "SQL statement failed";
@@ -68,7 +94,7 @@
                 while($row = mysqli_fetch_assoc($result)){
                   echo '
                     <div class="image">
-                      <img src="commisions/'.$row["fileName"].'" />
+                      <img src="images/media/'.$row["fileName"].'" />
                       <div class="text">
                         '.$row["description"].'
                       </div>
@@ -81,11 +107,12 @@
               <a href="contact.html">Click Here For Your Own Commission! >></a>
             </h2>
 
+            <!-- UPLOAD -->
             <?php
             // check if logged in
             if(isset($_SESSION['username'])){
               echo '<div class="image-upload">
-                <form action="includes/gallery-upload.php" method="post" enctype="multipart/form-data">
+                <form action="includes/homepage-commissions-upload.php" method="post" enctype="multipart/form-data">
                   <input type="text" name="filename" placeholder="file name.."/>
                   <input type="text" name="filetitle" placeholder="image title.."/>
                   <input type="text" name="filedesc" placeholder="image caption.."/>
