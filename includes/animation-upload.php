@@ -83,7 +83,7 @@ if(isset($_POST['submit'])){
                 // grab prepared statement
                 $stmt = mysqli_stmt_init($conn);
                 if(!mysqli_stmt_prepare($stmt, $sql)){
-                  echo "SQL statement failed";
+                  echo "SQL select statement failed";
                 } else{
                   mysqli_stmt_execute($stmt);
                   $result = mysqli_stmt_get_result($stmt);
@@ -93,9 +93,9 @@ if(isset($_POST['submit'])){
                   // @@@@@@@@@@@@@@@@@@@@@@@@@@@
                   // SQL INSERT TABLE QUERY
                   // @@@@@@@@@@@@@@@@@@@@@@@@@@@
-                  $sql = "INSERT INTO animation (title, previewFileDesc, previewFileName, popupFileDesc, popupFileName, imageOrder) VALUES (?, ?, ?, ?);";
+                  $sql = "INSERT INTO animation (title, previewFileDesc, previewFileName, popupFileDesc, popupFileName, imageOrder) VALUES (?, ?, ?, ?, ?, ?);";
                   if(!mysqli_stmt_prepare($stmt, $sql)){
-                    echo "SQL statement failed";
+                    echo "SQL insert statement failed";
                   } else{
                     mysqli_stmt_bind_param($stmt, "ssss", $imageTitle, $previewDesc, $previewImageFullName, $popupDesc, $popupImageFullName, $setImageOrder);
                     mysqli_stmt_execute($stmt);
