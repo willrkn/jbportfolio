@@ -57,15 +57,35 @@
     <div class="row">
 <!-- Column 1 -->
       <div class="column">
-        <div class="image">
-          <img src="images\AnimationDesign\homestart-cover.jpg" alt="Homestart"/>
-          <div class="imagetitle">
-            <h2>Project 1</h2>
-          </div>
-          <div class="text">
-              I have worked with Rocket Cow on four short films for Homestart Central Bedfordshire to date, as the background designer and painter for each film.
-          </div>
-        </div>
+
+
+
+        <?php
+        include_once 'includes/dbh.php';
+        $sql = "SELECT * FROM animation ORDER BY imageOrder + 0 DESC;";
+        $stmt = mysqli_stmt_init($conn);
+        if(!mysqli_stmt_prepare($stmt, $sql)){
+          echo "SQL statement failed";
+        } else{
+          mysqli_stmt_execute($stmt);
+          $result = mysqli_stmt_get_result($stmt);
+          // loop
+          while($row = mysqli_fetch_assoc($result)){
+            echo '
+              <div class="image">
+                <img src="images/media/'.$row["previewFileName"].'" />
+                <div class="text">
+                  '.$row["previewFileDesc"].'
+                </div>
+              </div>
+            ';
+          }
+        }
+        ?>
+
+
+
+
         <div class="image">
           <img src="images\AnimationDesign\marks-cover.png" alt="St Mark's Meals MK"/>
           <div class="imagetitle">

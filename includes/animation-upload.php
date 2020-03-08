@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
   $popupFile = $_FILES['popupfile'];
 
   // preview file
-  $previewFileName = $previewFile['name'];
+  $previewFileName = $previewFile['name']; //?????????????????????????
   $previewFileType = $previewFile['type'];
   $previewFileTemp = $previewFile['tmp_name'];
   $previewFileError = $previewFile['error'];
@@ -73,7 +73,7 @@ if(isset($_POST['submit'])){
               // database connection
               include_once "dbh.php";
               if(empty($popupDesc) || empty($previewDesc) || empty($postTitle)){
-                header("Location: ../art.php?upload=empty");
+                header("Location: ../animation.php?upload=empty");
                 exit();
               } else{
                 // @@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -97,13 +97,13 @@ if(isset($_POST['submit'])){
                   if(!mysqli_stmt_prepare($stmt, $sql)){
                     echo "SQL insert statement failed";
                   } else{
-                    mysqli_stmt_bind_param($stmt, "ssss", $imageTitle, $previewDesc, $previewImageFullName, $popupDesc, $popupImageFullName, $setImageOrder);
+                    mysqli_stmt_bind_param($stmt, "ssssss", $postTitle, $previewDesc, $previewImageFullName, $popupDesc, $popupImageFullName, $setImageOrder);
                     mysqli_stmt_execute($stmt);
                     // upload images
                     move_uploaded_file($previewFileTemp, $previewFileDest);
                     move_uploaded_file($popupFileTemp, $popupFileDest);
 
-                    header("Location: ../art.php?upload=success");
+                    header("Location: ../animation.php?upload=success");
                   }
                 }
               }
